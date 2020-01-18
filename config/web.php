@@ -51,11 +51,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'room'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'organizationmember'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'organization'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'booking'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'user', 'pluralize' => 'false',
+                    'extraPatterns' => ['GET hash/{password}' => 'hash']],
             ],
         ],
 

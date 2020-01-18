@@ -16,4 +16,11 @@ use yii\filters\VerbFilter;
 class UserController extends ActiveController
 {
     public $modelClass = 'app\models\User';
+
+    public function actionHash($password)
+    {
+        $user = new User();
+        $hash = $user->getPasswordHash($password);
+        return['password_hash' => $hash];
+    }
 }
